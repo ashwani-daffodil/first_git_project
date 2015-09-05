@@ -10,27 +10,11 @@ reaxtion.service('ReaxtionServerCommunicationsService', function ($http, ngDialo
 
     this.getProgrammingLanguages = function (callback) {
 
-        $http.put('/user_profile', {user_details: user_details}).
-            success(function (data, status, headers, config) {
+        $http.get('http://localhost:3000/language/view_language').
+            success(function (response) {
 
-                if (status === 200 && data) {
-
-                    ngDialog.open({
-                        closeByEscape: false,
-                        closeByDocument: false,
-                        showClose: false,
-
-                        template: '\
-                                            <p></p>\
-                                            <p style="font-weight: bold;">' + data + '.</p>\
-                                            <div class="ngdialog-buttons">\
-                                            <button type="button" style="height:30px;float:right;" class="btn btn-primary" ng-click="closeThisDialog()">OK</button>\
-                                            </div>',
-                        plain: true,
-                        className: 'ngdialog-theme-plain'
-                    });
-
-                    callback(null, data);
+                                   
+                    callback(null, response);
                 }
 
             }).
