@@ -1,14 +1,18 @@
+<div id="dashboardLanguageMenu">
+    <div ng-repeat="programmingLanguage in programmingLanguages" ng-click="selectProgrammingLanguage(programmingLanguage);" ng-class="{'selectedProgrammingLanguage': selectedProgrammingLanguage == programmingLanguage}" ng-style="{'width': 100 / programmingLanguages.length + '%'}" class="dashboardLanguageMenuOption" style="cursor: pointer;">
+        <a><span>{{programmingLanguage.lname}}</span></a>
+    </div>
+</div>
+
+<div id="dashboardWorkspace">
 <div id='cssmenu'>
     <ul>
-        <li ng-repeat="programmingLanguage in programmingLanguages" style="cursor: pointer;">
-            <a><span>{{ programmingLanguage.lname}}</span></a>
+        <li ng-repeat="video in videos" ng-if="selectedProgrammingLanguage.l_id == video.l_id" style="cursor: pointer;" ng-click="selectVideo(video);">
+            <a ng-class="{'selectedVideo': selectedVideo == video}"><span>{{ video.video_desc[0].video_desc}}</span></a>
         </li>
     </ul>
 </div>
 <div id="main">
-    <ul>
-        <li ng-repeat="video in videos" style="cursor: pointer;">
-            <a><span>{{ video.video_desc[0].video_desc}}</span></a>
-        </li>
-    </ul>
+    <iframe width="100%" height="100%" src="{{getTrustedVideoUrl()}}" frameborder="0" allowfullscreen></iframe>
+</div>
 </div>
