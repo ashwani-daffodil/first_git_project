@@ -6,7 +6,7 @@
  * Created by Praveen on 21-03-2015.
  */
 
-reaxtion.service('ReaxtionServerCommunicationsService', function ($http, ngDialog) {
+reaxtion.service('ServerCommunicationsService', function ($http) {
 
     this.getProgrammingLanguages = function (callback) {
 
@@ -19,7 +19,8 @@ reaxtion.service('ReaxtionServerCommunicationsService', function ($http, ngDialo
             error(function (data, status, headers, config) {
                 // called asynchronously if an error occurs
                 // or server returns response with an error status.
-            });
+            });}
+
      this.addProgrammingLanguages = function(callback) {
         var method="post";
         var insertUrl="http://localhost:3000/language/add_language";
@@ -107,7 +108,7 @@ reaxtion.service('ReaxtionServerCommunicationsService', function ($http, ngDialo
             $http({
                 method:method,
                 url:insertUrl,
-                data:jsonL1,
+                data:jsonL1
             }).success(function(response){
                 console.log(response);
             }).error(function(response){
@@ -117,7 +118,7 @@ reaxtion.service('ReaxtionServerCommunicationsService', function ($http, ngDialo
             $http({
                 method:method,
                 url:insertUrl,
-                data:jsonL2,
+                data:jsonL2
             }).success(function(response){
                 console.log(response);
             }).error(function(response){
@@ -127,7 +128,7 @@ reaxtion.service('ReaxtionServerCommunicationsService', function ($http, ngDialo
             $http({
                 method:method,
                 url:insertUrl,
-                data:jsonL3,
+                data:jsonL3
             }).success(function(response){
                 console.log(response);
             }).error(function(response){
@@ -137,7 +138,7 @@ reaxtion.service('ReaxtionServerCommunicationsService', function ($http, ngDialo
             $http({
                 method:method,
                 url:insertUrl,
-                data:jsonL4,
+                data:jsonL4
             }).success(function(response){
                 console.log(response);
             }).error(function(response){
@@ -147,13 +148,12 @@ reaxtion.service('ReaxtionServerCommunicationsService', function ($http, ngDialo
             $http({
                 method:method,
                 url:insertUrl,
-                data:jsonL5,
+                data:jsonL5
             }).success(function(response){
                 console.log(response);
             }).error(function(response){
                 console.log("error");
                 console.log(response);
             });
-     }   
-    }
+     }
 });
