@@ -10,10 +10,23 @@ reaxtion.controller('dashboardViewController', ['$scope', 'ServerCommunicationsS
 
 
     $scope.programmingLanguages = [];
+    $scope.videos = [];
+
 
     //ServerCommunicationsService.addProgrammingLanguages(function() {
 //
     //  });
+
+//    ServerCommunicationsService.addVideos(function() {
+//
+//      });
+
+    ServerCommunicationsService.getVideos(function(err, response) {
+
+        if(!err) {
+            $scope.videos = response;
+        }
+    });
 
     ServerCommunicationsService.getProgrammingLanguages(function(err, response) {
 

@@ -118,7 +118,7 @@ reaxtion.service('ServerCommunicationsService', function ($http) {
                 console.log(response);
             });
     }
-    this.getProgrammingLanguages = function (callback) {
+    this.getVideos = function (callback) {
 
         $http.get('http://localhost:3000/video/view_videos').
             success(function (response) {
