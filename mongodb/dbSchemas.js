@@ -1,7 +1,7 @@
 var mongoose = require("mongoose");
 var dbHost = "mongodb://localhost:27017/reaxtion";
 mongoose.connect(dbHost);
-var userSchema=mongoose.schema({
+var userSchema=mongoose.Schema({
 	user_id: {type:Number, index:true, unique:true},
 	username: {type:String, index:true, unique:true},
 	password: String,
@@ -9,7 +9,7 @@ var userSchema=mongoose.schema({
 },{
 	collection:"users"
 });
-var languageSchema=mongoose.schema({
+var languageSchema=mongoose.Schema({
 	l_id: {type: String, index:true, unique:true},
 	lname: String,
 	videos: [
@@ -20,7 +20,7 @@ var languageSchema=mongoose.schema({
 },{
 	collection:"languages"
 });
-var videoSchema=mongoose.schema({
+var videoSchema=mongoose.Schema({
 	l_id: String,
 	video_id: {type:String, index:true, unique:true},
 	video_desc: [
