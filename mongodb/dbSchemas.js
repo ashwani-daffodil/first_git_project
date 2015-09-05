@@ -23,13 +23,11 @@ var languageSchema=mongoose.Schema({
 var videoSchema=mongoose.Schema({
 	l_id: String,
 	video_id: {type:String, index:true, unique:true},
-	video_desc: [
-	{
+	video_desc: {
 		video_title: String,
 		video_desc: String,
 		video_url: String
 	}
-	]
 },{
 	collection:"videos"
 });
