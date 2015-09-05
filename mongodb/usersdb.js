@@ -1,6 +1,6 @@
 var db = require("./dbSchemas.js")
 
-var calls :
+var calls =
 {
 	users_Find: function(filters, projection, options, callback) {
        db.users.find(filters, projection, options, function(err, res) {

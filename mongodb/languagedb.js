@@ -1,6 +1,6 @@
 var db = require("./dbSchemas.js")
 
-var calls :
+var calls =
 {
 	language_Find: function(filters, projection, options, callback) {
        db.language.find(filters, projection, options, function(err, res) {
@@ -29,7 +29,7 @@ var calls :
 
            callback(null, res);
        });
-   }
+   },
    language_Delete: function(match, options, callback) {
       console.log("w............",match);
         db.language.remove(match, options, function(err, res) {

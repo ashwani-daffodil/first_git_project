@@ -1,6 +1,6 @@
 var db = require("./dbSchemas.js")
 
-var calls :
+var calls =
 {
 	videos_Find: function(filters, projection, options, callback) {
        db.videos.find(filters, projection, options, function(err, res) {
@@ -29,7 +29,7 @@ var calls :
 
            callback(null, res);
        });
-   }
+   },
 videos_Delete: function(match, options, callback) {
       console.log("w............",match);
         db.videos.remove(match, options, function(err, res) {
