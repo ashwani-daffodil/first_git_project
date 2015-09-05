@@ -22,7 +22,7 @@ var languageSchema=mongoose.Schema({
 });
 var videoSchema=mongoose.Schema({
 	l_id: String,
-	video_id: {type:String, index:true, unique:true},
+	video_id:String,
 	video_desc: {
 		video_title: String,
 		video_desc: String,
@@ -31,6 +31,7 @@ var videoSchema=mongoose.Schema({
 },{
 	collection:"videos"
 });
+videoSchema.index({l_id: 1, video_id:1},{ unique: true});
 module.exports.users = mongoose.model("users",userSchema);
 module.exports.languages = mongoose.model("languages",languageSchema);
 module.exports.videos = mongoose.model("videos",videoSchema);
