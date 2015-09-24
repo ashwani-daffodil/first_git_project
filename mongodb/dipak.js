@@ -18,4 +18,25 @@ describe('add()', function () {
 		assert.equal(res, test.expected);
 		});
 	});
-});
+});     {
+                        label: "Applane User", field: "user_id.username", ui: "text",span:2
+                    },
+                    {
+                        label: "Joining Date", field: "joining_date", ui: "date",span:2
+                    },
+                    {
+                        label: "Unit", field: "actual_profit_center_id.name", ui: "text",span:2
+                    },
+                    {
+                        label: "Sitting Location", field: "sitting_location_id.name", ui: "text",span:2
+                    },
+                    {
+                        label: "Orgnization", field: "org_id.name", ui: "text",span:2
+                    }
+
+
+
+                ]
+            }
+        ],
+        service: {
